@@ -3,6 +3,9 @@ import api from '../utils/Api.js';
 import Card from './Card.js';
 
 function Main(props){
+  const handleError = function(error){
+    console.log(error);
+  }
   const [userName, setUserName] = React.useState('');
   const [userDescription, setUserDescription] = React.useState('');
   const [userAvatar, setUserAvatar] = React.useState('');
@@ -10,11 +13,11 @@ function Main(props){
 
   React.useEffect(()=>{
     api.getMe().then(user=>{
-      setUserName(user.name);
-      setUserDescription(user.about);
-      setUserAvatar(user.avatar);
-    });
-    api.getCards().then(cards=>setCards(cards));
+        setUserName(user.name);
+        setUserDescription(user.about);
+        setUserAvatar(user.avatar);
+      }).catch(handleError);
+    api.getCards().then(cards=>setCards(cards)).catch(handleError);
     return ()=>{};
   }, []);
 
