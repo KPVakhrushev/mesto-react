@@ -19,7 +19,7 @@ const  Card = ( ({card, onCardClick, onCardLike, onCardDelete}) => {
 
   return (
     <li className="element">
-      <img className="element__image" alt="" src={card.link} onClick={handleClick}/>
+      <img className="element__image" alt={card.name} src={card.link} onClick={handleClick}/>
       <h2 className="element__title">{card.name}</h2>
       <button className={likeButtonClass} type="button" onClick={handleLike}>{card.likes.length}</button>
       {isOwn && <button className="element__delete" type="button" onClick={handleDelete}></button>}

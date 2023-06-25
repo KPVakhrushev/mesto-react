@@ -14,7 +14,7 @@ function EditAvatarPopup(props){
   }
   React.useEffect(() => {
     if(currentUser.avatar) setAvatar(currentUser.avatar);
-  }, [currentUser]);
+  }, [currentUser, props.isOpen]);
   return (
     <PopupWithForm name="avatar" title="Обновить аватар"  submitTitle="Сохранить" {...props} onSubmit={handleSubmit}>
       <input className="popup__text-input" name="avatar"  id="input-avatar-src"  placeholder="Ссылка на картинку аватара" type="url" required  ref={avatarRef} value={avatar}  onChange={(e)=>setAvatar(e.target.value)}/>

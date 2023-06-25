@@ -15,7 +15,7 @@ function EditProfilePopup(props){
     if(currentUser.name)  setName(currentUser.name);
     if(currentUser.about) setAbout(currentUser.about);
 
-  }, [currentUser]);
+  }, [currentUser, props.isOpen]);
   return (
   <PopupWithForm name="edit-profile" title='Редактировать профиль' submitTitle="Сохранить" onSubmit={handleSubmit} {...props} >
     <input className="popup__text-input" name="name"    id="input-profile-title"    type="text" minLength="2" maxLength="40" required placeholder="Введите ваше имя" value={name} onChange={(e)=>setName(e.target.value)}/>
