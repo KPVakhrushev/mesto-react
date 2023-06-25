@@ -1,8 +1,7 @@
 
 function ImagePopup(props){
-  //console.log(counter++);
   return (
-    <div className={`popup popup_blackout_strong popup_content_image ${props.card.id?'popup_opened':''}`}>
+    <div className={`popup popup_blackout_strong popup_content_image ${props.card._id?'popup_opened':''}`}>
       <div className="popup__container popup__container_content_image">
         <button className="popup__close-button" type="button" onClick={props.onClose}></button>
         <img className="popup__image" alt="" src={props.card.link}/>

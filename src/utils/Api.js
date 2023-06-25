@@ -47,16 +47,13 @@ class Api {
     return this._postJson('/cards', {name: name, link:link}).then(res=> res.json() );
   }
   deleteCard(id){
-    return this._delete(`/cards/${id}`).catch(error=>this._errorHandler(error))
+    return this._delete(`/cards/${id}`);
   }
   updateMeAvatar(avatarDataObject){
     return this._patchJson('/users/me/avatar', avatarDataObject).then(res=> res.json() );
   }
-  likeCard(id){
-    return this._put(`/cards/${id}/likes`).then(res=> res.json() );
-  }
-  unlikeCard(id){
-    return this._delete(`/cards/${id}/likes`).then(res=> res.json() );
+  changeLikeCardStatus(id, liked){
+    return (liked?this._put : this._delete).bind(this)(`/cards/${id}/likes`).then(res=> res.json() );
   }
 
 }
