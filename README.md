@@ -31,7 +31,9 @@
 
 ## **Демонстрация**
 
-Проект размещен [в github pages](https://kpvakhrushev.github.io/mesto-react/)
+Проект размещен [в github pages](https://kpvakhrushev.github.io/yp-4-mesto-react/)
+
 
 ## **Планы по доработке проекта**
-В рамках проектной работы 12 будет продолжено портирование проекта Mesto на «Реакт»
+Дальнейшее развитие проекта Mesto ведется в репозитории [yp-5-mesto-react-auth](https://github.com/KPVakhrushev/yp-5-mesto-react-auth).
+Изменений в данном репозитории далее не планируется.
